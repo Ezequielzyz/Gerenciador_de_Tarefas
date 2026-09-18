@@ -10,11 +10,51 @@ body {
 
 h1 {
     text-align: center;
-    color: rgba(0, 0, 0, 0.89);
-    font-weight: 800;
+    color: rgba(0, 0, 0, 0.849);
+    font-weight: 700;
+    font-size: 50px;
 }
 
 
 .search-box {
-    display: fle;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 450px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+
+.search-box input {
+    width: 2000px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid rgb(10, 125, 219);
+    border-radius: 8px;
+    outline: none;
+}
+
+
+.search-box input:focus {
+    border-color:  rgb(5, 84, 150);
+}
+
+.search-box button {
+    padding: 2px 15px;
+    font-size: 22px;
+    background-color: rgb(10, 125, 219);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border-color: rgb(10, 125, 219);
+    margin-top: 0.69%;
+    margin-left: 6px;
+}
+
+
+.search-box button:hover {
+    background-color: rgb(5, 84, 150);
+    border-color: rgb(5, 84, 150);
 }
