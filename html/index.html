@@ -15,14 +15,30 @@
 <body>
 
     <h1>Gerenciador de Tarefas</h1>
-    <form class="search-box" id="task-form">
-        <input type="text" placeholder="Pesquisar Tarefas..." id="task-input" required>
+
+    <!-- Formulário para adicionar nova tarefa -->
+    <form class="search-box" action="/add" method="POST">
+        <input type="text" name="conteudo" placeholder="Digitar Tarefa..." id="task-input" required>
         <button type="submit">Adicionar</button>
     </form>
 
-    <ul class="task-list" id="task-list"></ul>
+<!-- Lista de Tarefas -->
+    <ul class="task-list">
+        {% for tarefa in tarefas %}
+        <li style="margin-bottom: 10px;">
+            <!-- Formulário para atuzalizar tarefa existente -->
+             <form action="/update/ {{ tarefa['id'] }}" method="POST" style="display: inline-flex; gap: 5px;">
+                <input type="text" name="conteudo" value="{{ tarefa['conteudo'] }}" required>
+                <button type="submit">Salvar</button>
+            </form>
+            
+            <!-- Deletar Tarefa -->
+            <form action="/delete/{{ tarefa['id'] }}" method="POST" style="display: inline;">
+                <button type="submit" style="background-color: aqua; border-color: aqua;">Excluir</button>
+            </form>
+        </li>
+        {% else %}
 
-    <script src="../js/index.js"></script>
     
 </body>
 
